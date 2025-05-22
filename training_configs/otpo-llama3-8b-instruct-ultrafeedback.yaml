@@ -11,7 +11,7 @@ dataset_splits:
 - test
 preprocessing_num_workers: 12
 
-# OTWPOTrainer arguments
+# OTPOTrainer arguments
 bf16: true
 beta: 0.01
 do_eval: false
@@ -30,8 +30,8 @@ max_length: 2048
 max_prompt_length: 1800
 num_train_epochs: 1
 optim: adamw_torch
-output_dir: outputs/llama-3-8b-instruct-otwpo-ultrafeedback
-run_name: llama-3-8b-instruct-otwpo-ultrafeedback
+output_dir: outputs/llama-3-8b-instruct-otpo-ultrafeedback
+run_name: llama-3-8b-instruct-otpo-ultrafeedback
 per_device_train_batch_size: 2
 per_device_eval_batch_size: 4
 push_to_hub: false
