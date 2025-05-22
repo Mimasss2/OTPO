@@ -5,7 +5,7 @@ use_flash_attention_2: true
 
 # Data training arguments
 dataset_mixer:
-  onpolicy_data/llama3_instruct_helpsteer2: 1.0
+  mimasss/llama3-8b-instruct-helpsteer2: 1.0
 dataset_splits:
 - train
 preprocessing_num_workers: 12
