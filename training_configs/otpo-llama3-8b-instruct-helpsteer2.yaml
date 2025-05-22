@@ -1,0 +1,43 @@
+# Model arguments
+model_name_or_path: meta-llama/Meta-Llama-3-8B-Instruct
+torch_dtype: bfloat16
+use_flash_attention_2: true
+
+# Data training arguments
+dataset_mixer:
+  onpolicy_data/llama3_instruct_helpsteer2: 1.0
+dataset_splits:
+- train
+preprocessing_num_workers: 12
+
+# OTWPOTrainer arguments
+bf16: true
+beta: 0.01
+do_eval: false
+max_grad_norm: 20
+gradient_accumulation_steps: 16 
+gradient_checkpointing: true
+gradient_checkpointing_kwargs:
+  use_reentrant: False
+hub_model_id: otpo-exps
+learning_rate: 5.0e-7
+log_level: info
+logging_steps: 5
+lr_scheduler_type: cosine
+max_length: 2048
+max_prompt_length: 1800
+num_train_epochs: 1
+optim: adamw_torch
+output_dir: outputs/llama-3-8b-instruct-otwpo-helpsteer2
+run_name: llama-3-8b-instruct-otwpo-helpsteer2
+per_device_train_batch_size: 2
+per_device_eval_batch_size: 4
+push_to_hub: false
+save_strategy: "steps"
+save_steps: 1000000
+report_to:
+- wandb
+save_only_model: True
+save_total_limit: 20
+seed: 42
+warmup_ratio: 0.1
